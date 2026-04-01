@@ -1,3 +1,16 @@
+::root {
+  --theme: #fff;
+  --entry: #fff;
+  --primary: #222;
+  --secondary: #555;
+  --tertiary: #f0f0f0;
+  --border: #eee;
+}
+
+body {
+  background: #fff;
+}
+
 .post-title {
   font-size: 1.6em;
 }
