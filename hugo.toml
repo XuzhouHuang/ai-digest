@@ -1,0 +1,63 @@
+baseURL = "https://ai.kikihuang.net/"
+title = "AI Digest | Kiki's AI Builder Feed"
+languageCode = "zh-cn"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  description = "AI 行业日报与周报，追踪顶级 AI Builder 的最新动态"
+  author = "Kiki"
+
+  [params.homeInfoParams]
+    Title = "👋 AI Digest"
+    Content = "追踪顶级 AI Builder 的最新动态，每日/每周精选 AI 行业资讯"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/xuzhouhuang"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "categories"
+  name = "分类"
+  url = "/categories/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 4
+
+[[menu.main]]
+  identifier = "search"
+  name = "搜索"
+  url = "/search/"
+  weight = 5
