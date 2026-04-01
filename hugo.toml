@@ -21,9 +21,7 @@ theme = "PaperMod"
   description = "AI 行业日报与周报，追踪顶级 AI Builder 的最新动态"
   author = "Kiki"
 
-  [params.homeInfoParams]
-    Title = "👋 AI Digest"
-    Content = "追踪顶级 AI Builder 的最新动态，每日/每周精选 AI 行业资讯"
+  # 首页直接展示最新文章全文，不使用 homeInfoParams
 
   [[params.socialIcons]]
     name = "github"

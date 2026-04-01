@@ -1,0 +1,91 @@
+{{- define "main" }}
+
+{{- /* 获取最新的一篇文章 */ -}}
+{{- $latest := index (where .Site.RegularPages "Section" "posts") 0 }}
+
+{{- if $latest }}
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs">
+      <a href="{{ "/" | relURL }}">首页</a> · 最新一期
+    </div>
+    <h1 class="post-title entry-hint-parent">
+      {{ $latest.Title }}
+    </h1>
+    <div class="post-meta">
+      <span title='{{ $latest.Date.Format "2006-01-02 15:04:05" }}'>
+        {{ $latest.Date.Format "2006年01月02日" }}
+      </span>
+      {{ if $.Site.Params.ShowReadingTime }}
+      &nbsp;·&nbsp;{{ $latest.ReadingTime }} 分钟
+      {{ end }}
+    </div>
+
+    {{- if $latest.Params.summary }}
+    <div class="post-description" style="margin-top: 0.8em; color: var(--secondary); font-size: 0.95em;">
+      📋 {{ $latest.Params.summary }}
+    </div>
+    {{- end }}
+
+    {{- /* 分类和标签 */ -}}
+    <div style="margin-top: 1em;">
+    {{- range $latest.Params.categories }}
+      <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" style="background: var(--tertiary); padding: 2px 10px; border-radius: 4px; font-size: 0.85em; margin-right: 4px; text-decoration: none;">{{ . }}</a>
+    {{- end }}
+    {{- range $latest.Params.tags }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" style="background: var(--code-bg); padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 4px; text-decoration: none;">#{{ . }}</a>
+    {{- end }}
+    </div>
+  </header>
+
+  {{- /* 目录 */ -}}
+  {{- if (.Site.Params.ShowToc) }}
+  <aside id="toc-container" class="toc-container">
+    <div class="toc">
+      <details {{ if $.Site.Params.TocOpen }} open{{ end }}>
+        <summary accesskey="c" title="目录">
+          <span class="details">目录</span>
+        </summary>
+        <div class="inner">
+          {{ $latest.TableOfContents }}
+        </div>
+      </details>
+    </div>
+  </aside>
+  {{- end }}
+
+  <div class="post-content">
+    {{ $latest.Content }}
+  </div>
+
+  <footer class="post-footer" style="margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--border);">
+    <a href="{{ $latest.Permalink }}" style="margin-right: 1em;">📖 文章永久链接</a>
+    <a href="{{ "/archives/" | relURL }}">📚 查看所有往期内容</a>
+  </footer>
+</article>
+
+{{- /* 往期文章列表（最近5篇，不含最新的那篇） */ -}}
+{{- $older := after 1 (where .Site.RegularPages "Section" "posts") }}
+{{- if $older }}
+<div style="margin-top: 3em; padding-top: 1.5em; border-top: 2px solid var(--border);">
+  <h2 style="margin-bottom: 1em;">📰 往期内容</h2>
+  <ul style="list-style: none; padding: 0;">
+  {{- range first 5 $older }}
+    <li style="margin-bottom: 0.8em; display: flex; justify-content: space-between; align-items: baseline;">
+      <a href="{{ .Permalink }}" style="text-decoration: none;">{{ .Title }}</a>
+      <span style="color: var(--secondary); font-size: 0.85em; white-space: nowrap; margin-left: 1em;">{{ .Date.Format "01-02" }}</span>
+    </li>
+  {{- end }}
+  </ul>
+  <a href="{{ "/archives/" | relURL }}" style="font-size: 0.9em;">查看全部 →</a>
+</div>
+{{- end }}
+
+{{- else }}
+<div style="text-align: center; padding: 3em;">
+  <h2>还没有内容</h2>
+  <p>第一篇日报即将到来 ☕</p>
+</div>
+{{- end }}
+
+{{- end }}
