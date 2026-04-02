@@ -19,9 +19,9 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-/* 标题：轻量字重，大间距 */
+/* 标题 */
 .post-title {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 400;
   letter-spacing: 0.08em;
   margin-bottom: 0.5em;
