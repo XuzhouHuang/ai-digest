@@ -23,42 +23,47 @@ body {
 .post-title {
   font-size: 1.2em;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5em;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3em;
 }
 
-/* 文章内容整体间距 */
+/* 隐藏日期和阅读时间 */
+.post-meta {
+  display: none;
+}
+
+/* 文章内容 */
 .post-content {
-  line-height: 2;
+  line-height: 1.7;
   color: #333;
 }
 
-/* h2 模拟来源标签样式 */
+/* h2 */
 .post-content h2 {
   font-size: 0.85em;
   font-weight: 400;
   color: #999;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: 3em;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 0.3em;
+  padding-bottom: 0.3em;
   border-bottom: 1px solid #eee;
 }
 
-/* h3 模拟新闻标题 */
+/* h3 */
 .post-content h3 {
   font-size: 1.05em;
   font-weight: 500;
   color: #1a1a1a;
-  margin-top: 2em;
-  margin-bottom: 0.8em;
-  line-height: 1.6;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  line-height: 1.5;
 }
 
-/* 段落大间距 */
+/* 段落 */
 .post-content p {
-  margin-bottom: 1.8em;
+  margin-bottom: 0.9em;
   font-size: 0.95em;
 }
 
@@ -73,24 +78,17 @@ body {
   color: #333;
 }
 
-/* 列表项间距 */
+/* 列表项 */
 .post-content li {
-  margin-bottom: 1.2em;
-  line-height: 1.8;
+  margin-bottom: 0.6em;
+  line-height: 1.7;
 }
 
 /* 分隔线 */
 .post-content hr {
   border: none;
   border-top: 1px solid #eee;
-  margin: 3em 0;
-}
-
-/* 日期和 meta 信息 */
-.post-meta {
-  color: #bbb;
-  font-size: 0.85em;
-  letter-spacing: 0.05em;
+  margin: 2em 0;
 }
 
 /* tag 标签 */
@@ -101,7 +99,7 @@ body {
 
 /* 往期内容区域 */
 .post-footer {
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
 /* 目录 */
@@ -110,7 +108,7 @@ body {
   color: #999;
 }
 
-/* 整体内容区最大宽度稍窄 */
+/* 整体内容区最大宽度 */
 .main {
   max-width: 680px;
 }
@@ -118,7 +116,7 @@ body {
 /* 移动端适配 */
 @media (max-width: 768px) {
   .post-title {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .post-content h3 {
     font-size: 1em;
