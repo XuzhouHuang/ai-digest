@@ -123,4 +123,12 @@ body {
   .post-content h3 {
     font-size: 1em;
   }
+  .main {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+  .post-header, .post-content, .post-footer {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
 }
